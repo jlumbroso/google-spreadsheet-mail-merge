@@ -1,10 +1,8 @@
 {
 	"name": "Docker setup",
-
 	// Sets the run context to one level up instead of the .devcontainer folder.
 	"context": "..",
 	"dockerFile": "../Dockerfile",
-
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		// This will ignore your local shell user setting for Linux since shells like zsh are typically 
@@ -12,10 +10,10 @@
 		// uses the right one for terminals and tasks. For example, /bin/bash (or /bin/ash for Alpine).
 		"terminal.integrated.shell.linux": null
 	},
-
 	"extensions": [],
-
-	"postCreateCommand": "pipenv sync --dev",
-
-	"runArgs": [ "--network", "host"],
+	"postCreateCommand": "pipenv sync --dev && pipenv run python -m ipykernel install --name=`pipenv run basename $VIRTUAL_ENV` --display-name=`pipenv run basename $VIRTUAL_ENV`",
+	"runArgs": [
+		"--network",
+		"host"
+	]
 }
