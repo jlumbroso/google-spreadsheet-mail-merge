@@ -5,6 +5,22 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 # Install pipenv in case it is not present
 RUN pip3 install --upgrade pip
 
+RUN apt-get install tree
+
+USER root
+RUN cd && echo $(pwd) && ls -a
+RUN cd && mkdir $(basename $GITHUB_REPOSITORY)
+WORKDIR /root/$(basename $GITHUB_REPOSITORY)
+COPY Pipfile .
+COPY Pipfile.lock .
+RUN echo $(pwd) && ls -a
+
+# Install packages from Pipfile.lock using pipenv
+RUN pipenv sync --dev
+
+# Create Jupyter kernel using virtual environment from pipenv
+RUN pipenv run python -m ipykernel install --name=`basename $(pipenv --venv)` --display-name=`basename $(pipenv --venv)`
+
 # Create the service account credentials file from the environment
 # variable provided as a secret
 RUN echo "$SERVICE_ACCOUNT_JSON" > service_account.json

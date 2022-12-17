@@ -1,7 +1,8 @@
 {
 	"name": "Docker setup",
 	"extensions": [],
-	"postCreateCommand": "pipenv sync --dev && pipenv run python -m ipykernel install --name=`basename $(pipenv --venv)` --display-name=`basename $(pipenv --venv)`",
+	// moved to Dockerfile so that it is already run when user has VS code
+	// "postCreateCommand": "pipenv sync --dev && pipenv run python -m ipykernel install --name=`basename $(pipenv --venv)` --display-name=`basename $(pipenv --venv)`",
 	"runArgs": [
 		"--network",
 		"host"
