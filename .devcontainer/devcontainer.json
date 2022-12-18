@@ -1,8 +1,6 @@
 {
-	"name": "Docker setup",
+	"name": "Pipenv + Jupyter Kernel",
 	"extensions": [],
-	// moved to Dockerfile so that it is already run when user has VS code
-	// "postCreateCommand": "pipenv sync --dev && pipenv run python -m ipykernel install --name=`basename $(pipenv --venv)` --display-name=`basename $(pipenv --venv)`",
 	"postCreateCommand": "echo \"$SERVICE_ACCOUNT_JSON\" > service_account.json",
 	"runArgs": [
 		"--network",

@@ -8,10 +8,13 @@ RUN pip3 install --upgrade pip
 # Install pipenv in case it is not already installed
 RUN pip3 install --upgrade pipenv
 
-#COPY requirements.txt /tmp/pip-tmp/
+# Retrieve Pipfile and Pipfile.lock from cloned repo (which is right
+# next to this Dockerfile) and generate requirements.txt
 COPY Pipfile /tmp/pip-tmp/
 COPY Pipfile.lock /tmp/pip-tmp/
 RUN cd /tmp/pip-tmp/ && pipenv requirements --dev > requirements.txt
+
+# Install requirements.txt
 RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
     && rm -rf /tmp/pip-tmp
 
