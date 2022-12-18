@@ -2,10 +2,16 @@
 ARG VARIANT=3.10
 FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 
-# Install pipenv in case it is not present
+# Upgrade to latest version of pip
 RUN pip3 install --upgrade pip
 
-COPY requirements.txt /tmp/pip-tmp/
+# Install pipenv in case it is not already installed
+RUN pip3 install --upgrade pipenv
+
+#COPY requirements.txt /tmp/pip-tmp/
+COPY Pipfile /tmp/pip-tmp/
+COPY Pipfile.lock /tmp/pip-tmp/
+RUN cd /tmp/pip-tmp/ && pipenv requirements --dev > requirements.txt
 RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
     && rm -rf /tmp/pip-tmp
 
