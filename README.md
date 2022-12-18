@@ -10,7 +10,7 @@ This is a simple Python script that takes **a list of emails and names** from a 
 
    Save the `service_accounts.json` file locally in the root of this project (because the filename is in `.gitignore`, it will not be committed to the repository).
 
-   To be able to operate this project from GitHub Codespaces: [Create an encrypted GitHub Codespaces secret](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces) `SERVICE_ACCOUNT_JSON` with the the contents of the `service_accounts.json` file.
+   To be able to operate this project from GitHub Codespaces: [Create an encrypted GitHub Codespaces secret](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces) `SERVICE_ACCOUNT_JSON` with the the contents of the `service_accounts.json` file. ⚠️ Make sure to replace the `\n` characters in the private key with `\\\n` (three backslashes and an `n`), otherwise the file will not be rendered properly (to be fixed!).
 
    _Note: If you do not want to use Google Spreadsheets, you could also read the data from a CSV file._
 
