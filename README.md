@@ -2,11 +2,31 @@
 
 This is a template for a simple Python script that takes **a list of emails and names** from a Google Spreadsheet and sends **a personalized email** to each person using SendGrid.
 
-This project relies entirely on APIs that have **free tiers** 🤑, and can be run either locally or in a GitHub Codespace.
+The typical use case for which it was designed was in the context of higher education, either to send personalized emails to conference attendants or research subjects.
+
+The template relies entirely on APIs that have **free tiers** 🤑, and can be run either locally or in a GitHub Codespace.
+
+The example in this template uses [this public Google Spreadsheet with fictitious information](https://docs.google.com/spreadsheets/d/1ASvG2maFz0Jw9qk44PktzTWjS6Grxdvj_S4NiyIxCTE/edit#gid=0), and the emails are sent to [a publically accessible inbox on MailSAC `google-spreadsheet-mail-merge@mailsac.com`](https://mailsac.com/inbox/google-spreadsheet-mail-merge-test@mailsac.com) which you can check out to see sample emails.
+
+_If this template is useful to you, 🌟 start the repository on GitHub to show your support!_ 🤩😊
 
 ## 🚠 Overview
 
-## 🧰 Setup
+The recommended steps to use this template are:
+
+- Follow the **🧰 Initial Setup** instructions below to create your own repository, obtain Google Spreadsheet and Twilio SendGrid API keys, and configure everything needed to launch a GitHub Codespace.
+- Edit the `notebook.ipynb` file to adapt the script to your needs:
+  - Change the Google Spreadsheet ID and worksheet index to your own spreadsheet in the **📝 TODO: Customize this part of the notebook** section of the notebook.
+  - Create email templates and add them to the `./templates` subfolder.
+  - Write the logic to determine, for each contact, which template to use and how to customize it, by editing the **🪄 TODO: Actual logic of how to customize emails** section of the notebook.
+- Send the emails!
+
+If you are unfamiliar with GitHub and/or are new to programming, you may find it useful to know that:
+
+- You can [add files to your repository directly from GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)
+- You can [modify the notebook directly from GitHub Codespace by committing your changes to the repository](https://docs.github.com/en/codespaces/developing-in-codespaces/using-source-control-in-your-codespace#committing-your-changes).
+
+## 🧰 Initial Setup
 
 🪪 Before proceeding, [**register** a GitHub account](https://github.com/join) if you don't already have one.
 
@@ -59,16 +79,27 @@ pipenv run python -m ipykernel install --name='google-spreadsheet-mail-merge' --
 
 ## 🙋 Frequently Asked Questions
 
+If you have a question, please [open an issue](https://github.com/jlumbroso/google-spreadsheet-mail-merge/issues/new)!
+
 ## ⚖️ License
 
 This template is licensed under [The Unlicense](https://unlicense.org/). This means I have no liability, but you can do absolutely what you want with this, or any part of this, for whatever purposes, you don't have to credit me, this project, or anything.
+
+The reason for such a permissive license is to ensure that this template is an unfettered learning experience for my students, those of my colleagues, and the broader community! 🥰
 
 If you are thankful for this template, please ⭐️ star it on GitHub.
 
 If you would like to contribute to this template, please open an issue (to suggest an improvement) or a pull request (to contribute code), and include the following disclaimer:
 
-```text
-I dedicate any and all copyright interest in this software to the public domain. I make this dedication for the benefit of the public at large and to the detriment of my heirs and successors. I intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this software under copyright law.
-```
+> I dedicate any and all copyright interest in this software
+> to the public domain. I make this dedication for the benefit
+> of the public at large and to the detriment of my heirs and
+> successors. I intend this dedication to be an overt act of
+> relinquishment in perpetuity of all present and future
+> rights to this software under copyright law.
 
 ## 🙏 Acknowledgements
+
+The first version of this template was written during the organization of [a regional CSCW meet-up in November 2022](https://hci.princeton.edu/cscw-northeast/), co-organized by [**@andresmh**](https://github.com/andresmh), [**@jlumbroso**](https://github.com/jlumbroso) and Rosanna Bellini.
+
+The second and upgraded version of this template was created for [**@liuyuhan1997**](https://github.com/liuyuhan1997) for an HCI research project on restaurant-delivery platforms. The sample template was authored by her.
