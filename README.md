@@ -8,7 +8,7 @@ The template relies entirely on APIs that have **free tiers** 🤑, and can be r
 
 The example in this template uses [this public Google Spreadsheet with fictitious information](https://docs.google.com/spreadsheets/d/1ASvG2maFz0Jw9qk44PktzTWjS6Grxdvj_S4NiyIxCTE/edit#gid=0), and the emails are sent to [a publically accessible inbox on MailSAC `google-spreadsheet-mail-merge@mailsac.com`](https://mailsac.com/inbox/google-spreadsheet-mail-merge-test@mailsac.com) which you can check out to see sample emails.
 
-_If this template is useful to you, 🌟 start the repository on GitHub to show your support!_ 🤩😊
+_If this template is useful to you, 🌟 star the repository on GitHub to show your support!_ 🤩😊
 
 ## 🚠 Overview
 
