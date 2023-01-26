@@ -40,9 +40,9 @@ You can **instantiate** this template repository [by clicking the green "Use thi
 
 Although Google Spreadsheet API is free to use for basic usage, Google requires you to have an account setup: [Create a project](https://docs.gspread.org/en/latest/oauth2.html#enable-api-access-for-a-project) and enable API access, then [obtain service account credentials](https://docs.gspread.org/en/latest/oauth2.html#for-bots-using-service-account).
 
-Save the `service_accounts.json` file locally in the root of this project (because the filename is in `.gitignore`, it will not be committed to the repository).
+Save the `service_account.json` file locally in the root of this project (because the filename is in `.gitignore`, it will not be committed to the repository).
 
-To be able to operate this project from GitHub Codespaces: [Create an encrypted GitHub Codespaces secret](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces) `SERVICE_ACCOUNT_JSON` with the the contents of the `service_accounts.json` file.
+To be able to operate this project from GitHub Codespaces: [Create an encrypted GitHub Codespaces secret](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces) `SERVICE_ACCOUNT_JSON` with the the contents of the `service_account.json` file.
 
 _Note: If you do not want to use Google Spreadsheets, you could also read the data from a CSV file._
 
